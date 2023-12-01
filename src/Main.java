@@ -37,7 +37,6 @@ public class Main {
                 Image image = new Image(name, type);
 
                 // insertMediaToList(list, image);
-
                if (list != null) {
                     for (int i = 0; i < list.length; i++) {
                         if (list[i] == null) {
@@ -69,6 +68,24 @@ public class Main {
                 } else {
                     list[0] = audio;
                 }
+            } else if(type.equalsIgnoreCase("video") && name != null) {
+                System.out.println("duration :");
+                String duration = item.nextLine();
+                Video video = new Video(name, type, Integer.parseInt(duration));
+
+                if (list != null) {
+                    for (int i = 0; i < list.length; i++) {
+                        if (list[i] == null) {
+                            list[i] = video;
+                            if (list.length == 5 && list[4] != null) {
+                                break mediaCollector;
+                            }
+                            break;
+                        }
+                    }
+                } else {
+                    list[0] = video;
+                }
             }
         }
 
@@ -80,9 +97,8 @@ public class Main {
                 System.out.println(list[i].toString());
             }
         }
-        System.out.println(Arrays.toString(list));
 
-        /*
+
         // let user select track
         Scanner input = new Scanner(System.in);
         System.out.println("quale oggetto eseguire (leggendo un intero da 1 a 5 oppure o per finire)?");
@@ -91,12 +107,14 @@ public class Main {
         // based on user select print length times selected track
         if (source > 0) {
             System.out.println("Hai selezionato " + source);
-            source -= source;
+            // source -= source;
+            System.out.println("source " + source);
 
             for (int i = 0; i < list.length; i++) {
-                if(i == source) {
-                    for (int j = 0; j < list[i + 1].getLength(); j++) {
-                        System.out.println(list[i + 1]);
+                if(i == source - 1) {
+                    System.out.println("print this " + list[i + 1]);
+                    for (int j = 0; j < list[source - 1].getLength(); j++) {
+                        System.out.println(list[source - 1]);
                     }
                     break;
                 }
@@ -115,7 +133,6 @@ public class Main {
         input.close();
 
 
-         */
 
     }
 

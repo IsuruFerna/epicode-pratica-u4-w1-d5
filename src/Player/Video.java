@@ -11,6 +11,11 @@ public class Video extends Media implements Player, Brightness{
         this.volume = volume;
         this.brightness = brightness;
     }
+    public Video(String title, String type, int length) {
+        super(type, title, length);
+        this.volume = 100;
+        this.brightness = 100;
+    }
 
     // handle brightness
     @Override
