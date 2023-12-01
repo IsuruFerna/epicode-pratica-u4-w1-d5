@@ -14,6 +14,8 @@ public class Main {
 
         // Media[] list =  {audio1, audio2, video1, image1, video2};
 
+
+
         Media[] list;
         list = new Media[5];
 
@@ -21,6 +23,7 @@ public class Main {
         String name;
         String type;
         System.out.println("insert ");
+
         mediaCollector:
         while (true) {
             System.out.println("Follow the instructions to insert multimedia");
@@ -30,10 +33,12 @@ public class Main {
             name = item.nextLine();
 
             // handle image input
-            if(type.equalsIgnoreCase("image") && type != null) {
+            if(type.equalsIgnoreCase("image") && name != null) {
                 Image image = new Image(name, type);
 
-                if (list != null) {
+                // insertMediaToList(list, image);
+
+               if (list != null) {
                     for (int i = 0; i < list.length; i++) {
                         if (list[i] == null) {
                             list[i] = image;
@@ -46,7 +51,24 @@ public class Main {
                 } else {
                     list[0] = image;
                 }
-                // break;
+            } else if(type.equalsIgnoreCase("audio") && name != null) {
+                System.out.println("duration :");
+                String duration = item.nextLine();
+                Audio audio = new Audio(name, type, Integer.parseInt(duration));
+
+                if (list != null) {
+                    for (int i = 0; i < list.length; i++) {
+                        if (list[i] == null) {
+                            list[i] = audio;
+                            if (list.length == 5 && list[4] != null) {
+                                break mediaCollector;
+                            }
+                            break;
+                        }
+                    }
+                } else {
+                    list[0] = audio;
+                }
             }
         }
 
@@ -96,4 +118,22 @@ public class Main {
          */
 
     }
+
+   /*
+    static void insertMediaToList(Media[] list, Media item) {
+        if (list != null) {
+            for (int i = 0; i < list.length; i++) {
+                if (list[i] == null) {
+                    list[i] = item;
+                    if (list.length == 5 && list[4] != null) {
+                        break mediaCollector;
+                    }
+                    break;
+                }
+            }
+        } else {
+            list[0] = item;
+        }
+    }
+    */
 }

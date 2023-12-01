@@ -10,6 +10,11 @@ public class Audio extends Media implements Player {
         this.volume = volume;
     }
 
+    public Audio(String title, String type, int length) {
+        super(type, title, length);
+        this.volume = 100;
+    }
+
     @Override
     public String toString() {
         // short volume length to print
