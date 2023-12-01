@@ -42,6 +42,10 @@ public class Main {
             System.out.println("user did not selected any!");
         }
 
+
+        System.out.println(audio2.volumeUp());
+        System.out.println(image1.brightnessDown());
+
         input.close();
 
     }

@@ -2,7 +2,7 @@ package Player;
 
 import java.util.StringJoiner;
 
-public class Video extends Media{
+public class Video extends Media implements Volume, Brightness{
     public int volume;
     public int brightness;
 
@@ -12,6 +12,39 @@ public class Video extends Media{
         this.brightness = brightness;
     }
 
+    // handle brightness
+    @Override
+    public int brightnessUp() {
+        if (0 <= brightness && brightness <= 90) {
+            brightness += 10;
+        }
+        return brightness;
+    }
+
+    @Override
+    public int brightnessDown() {
+        if (10 <= brightness && brightness <= 100) {
+            brightness -= 10;
+        }
+        return brightness;
+    }
+
+    // handle volume
+    @Override
+    public int volumeUp() {
+        if (0 <= volume && volume <= 90) {
+            volume += 10;
+        }
+        return volume;
+    }
+
+    @Override
+    public int volumeDown() {
+        if (10 <= volume && volume <= 100) {
+            volume -= 10;
+        }
+        return volume;
+    }
 
     @Override
     public String toString() {

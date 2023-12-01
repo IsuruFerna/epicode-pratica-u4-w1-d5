@@ -2,7 +2,7 @@ package Player;
 
 import java.util.StringJoiner;
 
-public class Image extends Media{
+public class Image extends Media implements Brightness{
     public int brightness;
 
     public Image(String title, MultimediaType type, int brightness) {
@@ -22,5 +22,22 @@ public class Image extends Media{
                 .add("title=" + title)
                 .add("brightness=" + brightnessStr)
                 .toString();
+    }
+
+    // handle brightness
+    @Override
+    public int brightnessUp() {
+        if (0 <= brightness && brightness <= 90) {
+            brightness += 10;
+        }
+        return brightness;
+    }
+
+    @Override
+    public int brightnessDown() {
+        if (10 <= brightness && brightness <= 100) {
+            brightness -= 10;
+        }
+        return brightness;
     }
 }

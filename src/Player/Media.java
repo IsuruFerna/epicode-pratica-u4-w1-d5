@@ -22,4 +22,5 @@ public abstract class Media {
     public int getLength() {
         return length;
     }
+
 }

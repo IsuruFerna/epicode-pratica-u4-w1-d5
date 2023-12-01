@@ -2,15 +2,13 @@ package Player;
 
 import java.util.StringJoiner;
 
-public class Audio extends Media{
+public class Audio extends Media implements Volume {
     public int volume;
 
     public Audio(String title, MultimediaType type, int length, int volume) {
         super(type, title, length);
         this.volume = volume;
     }
-
-
 
     @Override
     public String toString() {
@@ -25,5 +23,22 @@ public class Audio extends Media{
                 .add("length=" + length)
                 .add("volume=" + volumeStr)
                 .toString();
+    }
+
+    // handle volume
+    @Override
+    public int volumeUp() {
+        if (0 <= volume && volume <= 90) {
+            volume += 10;
+        }
+        return volume;
+    }
+
+    @Override
+    public int volumeDown() {
+        if (10 <= volume && volume <= 100) {
+            volume -= 10;
+        }
+        return volume;
     }
 }
