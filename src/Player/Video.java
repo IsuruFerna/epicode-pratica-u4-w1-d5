@@ -2,7 +2,7 @@ package Player;
 
 import java.util.StringJoiner;
 
-public class Video extends Media implements Volume, Brightness{
+public class Video extends Media implements Player, Brightness{
     public int volume;
     public int brightness;
 
@@ -44,6 +44,27 @@ public class Video extends Media implements Volume, Brightness{
             volume -= 10;
         }
         return volume;
+    }
+
+    // handle play
+
+
+    @Override
+    public String play() {
+        // short volume and brightness length to print
+        int printVolume = volume / 10;
+        int printBrightness = brightness / 10;
+
+        // compacted for loop with intellij suggestions
+        String volumeStr = "!".repeat(Math.max(0, printVolume));
+        String brightnessStr = "*".repeat(Math.max(0, printBrightness));
+
+        return new StringJoiner(", ", Video.class.getSimpleName() + "[", "]")
+                .add("title=" + title)
+                .add("length=" + length)
+                .add("volume=" + volumeStr)
+                .add("brightness=" + brightnessStr)
+                .toString();
     }
 
     @Override

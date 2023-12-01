@@ -6,13 +6,23 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         // manually crated a media list
-        Audio audio1 = new Audio("bob", MultimediaType.AUDIO, 3, 55);
-        Audio audio2 = new Audio("charlie", MultimediaType.AUDIO, 2, 33);
-        Video video1 = new Video("foo", MultimediaType.VIDEO, 3, 100, 100);
-        Image image1 = new Image("baa", MultimediaType.IMAGE, 100);
-        Video video2 = new Video("alice", MultimediaType.VIDEO, 5, 58, 66);
+        // Audio audio1 = new Audio("bob", MultimediaType.AUDIO, 3, 55);
+        // Audio audio2 = new Audio("charlie", MultimediaType.AUDIO, 2, 33);
+        // Video video1 = new Video("foo", MultimediaType.VIDEO, 3, 100, 100);
+        // Image image1 = new Image("baa", MultimediaType.IMAGE, 100);
+        // Video video2 = new Video("alice", MultimediaType.VIDEO, 5, 58, 66);
 
-        Media[] list =  {audio1, audio2, video1, image1, video2};
+        // Media[] list =  {audio1, audio2, video1, image1, video2};
+
+        Media[] list;
+        list = new Media[5];
+
+        Scanner item = new Scanner(System.in);
+        System.out.println("insert ");
+        while (list.length >= 5) {
+            System.out.println("inseert");
+
+        }
 
         // print current media list
         for (int i = 0; i < list.length; i++) {
@@ -43,8 +53,11 @@ public class Main {
         }
 
 
-        System.out.println(audio2.volumeUp());
-        System.out.println(image1.brightnessDown());
+        // System.out.println(audio2.play());
+        // System.out.println(image1.show());
+
+        // System.out.println("-------------------------------------------");
+        // System.out.println(audio2.play());
 
         input.close();
 

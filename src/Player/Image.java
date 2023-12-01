@@ -10,6 +10,19 @@ public class Image extends Media implements Brightness{
         this.brightness = brightness;
     }
 
+    public String show() {
+        // short volume and brightness length to print
+        int printBrightness = brightness / 10;
+
+        // compacted for loop with intellij suggestions
+        String brightnessStr = "*".repeat(Math.max(0, printBrightness));
+
+        return new StringJoiner(", ", Image.class.getSimpleName() + "[", "]")
+                .add("title=" + title)
+                .add("brightness=" + brightnessStr)
+                .toString();
+    }
+
     @Override
     public String toString() {
         // short volume and brightness length to print

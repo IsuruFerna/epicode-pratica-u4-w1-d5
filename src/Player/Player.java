@@ -1,8 +1,9 @@
 package Player;
 
-public interface Volume {
+public interface Player {
     int volumeUp ();
     int volumeDown();
+    String play();
 }
 
 
