@@ -18,7 +18,7 @@ public class Image extends Media{
         // compacted for loop with intellij suggestions
         String brightnessStr = "*".repeat(Math.max(0, printBrightness));
 
-        return new StringJoiner(", ", Audio.class.getSimpleName() + "[", "]")
+        return new StringJoiner(", ", Image.class.getSimpleName() + "[", "]")
                 .add("title=" + title)
                 .add("brightness=" + brightnessStr)
                 .toString();

@@ -3,14 +3,14 @@ package Player;
 import java.util.StringJoiner;
 
 public class Audio extends Media{
-    public int length;
     public int volume;
 
     public Audio(String title, MultimediaType type, int length, int volume) {
-        super(type, title);
-        this.length = length;
+        super(type, title, length);
         this.volume = volume;
     }
+
+
 
     @Override
     public String toString() {
@@ -22,7 +22,6 @@ public class Audio extends Media{
 
         return new StringJoiner(", ", Audio.class.getSimpleName() + "[", "]")
                 .add("title=" + title)
-                .add("length=" + length)
                 .add("length=" + length)
                 .add("volume=" + volumeStr)
                 .toString();
