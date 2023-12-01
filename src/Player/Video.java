@@ -7,7 +7,7 @@ public class Video extends Media implements Volume, Brightness{
     public int brightness;
 
     public Video(String title, MultimediaType type, int length, int volume, int brightness) {
-        super(type, title, length);
+        super(String.valueOf(type), title, length);
         this.volume = volume;
         this.brightness = brightness;
     }

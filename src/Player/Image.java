@@ -6,7 +6,7 @@ public class Image extends Media implements Brightness{
     public int brightness;
 
     public Image(String title, MultimediaType type, int brightness) {
-        super(type, title);
+        super(String.valueOf(type), title);
         this.brightness = brightness;
     }
 

@@ -20,7 +20,7 @@ public class Main {
         }
         // System.out.println(Arrays.toString(list));
 
-        // let user to select track
+        // let user select track
         Scanner input = new Scanner(System.in);
         System.out.println("quale oggetto eseguire (leggendo un intero da 1 a 5 oppure o per finire)?");
         int source = input.nextInt();

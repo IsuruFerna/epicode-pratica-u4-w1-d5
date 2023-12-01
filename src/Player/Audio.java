@@ -6,7 +6,7 @@ public class Audio extends Media implements Volume {
     public int volume;
 
     public Audio(String title, MultimediaType type, int length, int volume) {
-        super(type, title, length);
+        super(String.valueOf(type), title, length);
         this.volume = volume;
     }
 

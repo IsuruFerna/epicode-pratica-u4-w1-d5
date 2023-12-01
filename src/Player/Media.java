@@ -8,15 +8,26 @@ public abstract class Media {
     String title;
     int length;
 
-    public Media(MultimediaType type, String title) {
-        this.type = type;
+    public Media(String type, String title) {
         this.title = title;
+        if(type.equalsIgnoreCase("image")) {
+            this.type = MultimediaType.IMAGE;
+        } else {
+            System.err.println("Media should be Image");
+        }
     }
 
-    public Media(MultimediaType type, String title, int length) {
-        this.type = type;
+    public Media(String type, String title, int length) {
         this.title = title;
         this.length = length;
+        if (type.equalsIgnoreCase( "audio")) {
+            this.type = MultimediaType.AUDIO;
+        } else if (type.equalsIgnoreCase( "video")) {
+            this.type = MultimediaType.VIDEO;
+        } else {
+            System.err.println("Media should be audio o video");
+        }
+
     }
 
     public int getLength() {
