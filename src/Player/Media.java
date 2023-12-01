@@ -10,5 +10,4 @@ public class Media {
         this.type = type;
         this.title = title;
     }
-
 }
