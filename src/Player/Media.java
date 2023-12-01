@@ -1,5 +1,14 @@
 package Player;
 
+import java.util.StringJoiner;
+
 public class Media {
-    private MultimediaType type;
+    MultimediaType type;
+    String title;
+
+    public Media(MultimediaType type, String title) {
+        this.type = type;
+        this.title = title;
+    }
+
 }
