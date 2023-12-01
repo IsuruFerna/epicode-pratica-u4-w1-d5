@@ -18,18 +18,49 @@ public class Main {
         list = new Media[5];
 
         Scanner item = new Scanner(System.in);
+        String name;
+        String type;
         System.out.println("insert ");
-        while (list.length >= 5) {
-            System.out.println("inseert");
+        mediaCollector:
+        while (true) {
+            System.out.println("Follow the instructions to insert multimedia");
+            System.out.println("Availabale types are image, audio, video");
+            System.out.println("audio and vides required duration of audio or video");
+            type = item.nextLine();
+            name = item.nextLine();
 
+            // handle image input
+            if(type.equalsIgnoreCase("image") && type != null) {
+                Image image = new Image(name, type);
+
+                if (list != null) {
+                    for (int i = 0; i < list.length; i++) {
+                        if (list[i] == null) {
+                            list[i] = image;
+                            if (list.length == 5 && list[4] != null) {
+                                break mediaCollector;
+                            }
+                            break;
+                        }
+                    }
+                } else {
+                    list[0] = image;
+                }
+                // break;
+            }
         }
+
+
 
         // print current media list
         for (int i = 0; i < list.length; i++) {
-            System.out.println(list[i].toString());
+            if (list[i] != null) {
+                System.out.println(list[i].toString());
+            }
         }
-        // System.out.println(Arrays.toString(list));
+        System.out.println(Arrays.toString(list));
 
+        /*
         // let user select track
         Scanner input = new Scanner(System.in);
         System.out.println("quale oggetto eseguire (leggendo un intero da 1 a 5 oppure o per finire)?");
@@ -60,6 +91,9 @@ public class Main {
         // System.out.println(audio2.play());
 
         input.close();
+
+
+         */
 
     }
 }

@@ -10,6 +10,11 @@ public class Image extends Media implements Brightness{
         this.brightness = brightness;
     }
 
+    public Image(String name, String type) {
+        super(type, name);
+        this.brightness = 100;
+    }
+
     public String show() {
         // short volume and brightness length to print
         int printBrightness = brightness / 10;
