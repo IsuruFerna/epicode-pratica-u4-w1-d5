@@ -1,6 +1,5 @@
 import Player.*;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -13,8 +12,6 @@ public class Main {
         // Video video2 = new Video("alice", MultimediaType.VIDEO, 5, 58, 66);
 
         // Media[] list =  {audio1, audio2, video1, image1, video2};
-
-
 
         Media[] list;
         list = new Media[5];
@@ -36,60 +33,47 @@ public class Main {
             if(type.equalsIgnoreCase("image") && name != null) {
                 Image image = new Image(name, type);
 
-                // insertMediaToList(list, image);
-               if (list != null) {
-                    for (int i = 0; i < list.length; i++) {
-                        if (list[i] == null) {
-                            list[i] = image;
-                            if (list.length == 5 && list[4] != null) {
-                                break mediaCollector;
-                            }
-                            break;
+                for (int i = 0; i < list.length; i++) {
+                    if (list[i] == null) {
+                        list[i] = image;
+                        if (list[4] != null) {
+                            break mediaCollector;
                         }
+                        break;
                     }
-                } else {
-                    list[0] = image;
                 }
+
             } else if(type.equalsIgnoreCase("audio") && name != null) {
                 System.out.println("duration :");
                 String duration = item.nextLine();
                 Audio audio = new Audio(name, type, Integer.parseInt(duration));
 
-                if (list != null) {
-                    for (int i = 0; i < list.length; i++) {
-                        if (list[i] == null) {
-                            list[i] = audio;
-                            if (list.length == 5 && list[4] != null) {
-                                break mediaCollector;
-                            }
-                            break;
+                for (int i = 0; i < list.length; i++) {
+                    if (list[i] == null) {
+                        list[i] = audio;
+                        if (list[4] != null) {
+                            break mediaCollector;
                         }
+                        break;
                     }
-                } else {
-                    list[0] = audio;
                 }
+
             } else if(type.equalsIgnoreCase("video") && name != null) {
                 System.out.println("duration :");
                 String duration = item.nextLine();
                 Video video = new Video(name, type, Integer.parseInt(duration));
 
-                if (list != null) {
-                    for (int i = 0; i < list.length; i++) {
-                        if (list[i] == null) {
-                            list[i] = video;
-                            if (list.length == 5 && list[4] != null) {
-                                break mediaCollector;
-                            }
-                            break;
+                for (int i = 0; i < list.length; i++) {
+                    if (list[i] == null) {
+                        list[i] = video;
+                        if (list[4] != null) {
+                            break mediaCollector;
                         }
+                        break;
                     }
-                } else {
-                    list[0] = video;
                 }
             }
         }
-
-
 
         // print current media list
         for (int i = 0; i < list.length; i++) {
@@ -97,7 +81,6 @@ public class Main {
                 System.out.println(list[i].toString());
             }
         }
-
 
         // let user select track
         Scanner input = new Scanner(System.in);
@@ -112,9 +95,9 @@ public class Main {
 
             for (int i = 0; i < list.length; i++) {
                 if(i == source - 1) {
-                    System.out.println("print this " + list[i + 1]);
-                    for (int j = 0; j < list[source - 1].getLength(); j++) {
-                        System.out.println(list[source - 1]);
+                    System.out.println("print this " + list[i]);
+                    for (int j = 0; j < list[i].getLength(); j++) {
+                        System.out.println(list[i]);
                     }
                     break;
                 }
@@ -131,8 +114,6 @@ public class Main {
         // System.out.println(audio2.play());
 
         input.close();
-
-
 
     }
 
