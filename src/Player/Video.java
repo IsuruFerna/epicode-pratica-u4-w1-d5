@@ -1,8 +1,12 @@
 package Player;
 
+import Player.Enum.MultimediaType;
+import Player.Interfaces.Brightness;
+import Player.Interfaces.Player;
+
 import java.util.StringJoiner;
 
-public class Video extends Media implements Player, Brightness{
+public class Video extends Media implements Player, Brightness {
     public int volume;
     public int brightness;
 

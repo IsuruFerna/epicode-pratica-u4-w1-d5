@@ -19,14 +19,16 @@ public class Main {
         Scanner item = new Scanner(System.in);
         String name;
         String type;
-        System.out.println("insert ");
 
         mediaCollector:
         while (true) {
-            System.out.println("Follow the instructions to insert multimedia");
+            System.out.println("Follow the instructions to insert multimedia files");
             System.out.println("Availabale types are image, audio, video");
             System.out.println("audio and vides required duration of audio or video");
+            System.out.println("--------------------------------------------");
+            System.out.println("Insert type:");
             type = item.nextLine();
+            System.out.println("Name:");
             name = item.nextLine();
 
             // handle image input
@@ -43,6 +45,7 @@ public class Main {
                     }
                 }
 
+            // handle audio input
             } else if(type.equalsIgnoreCase("audio") && name != null) {
                 System.out.println("duration :");
                 String duration = item.nextLine();
@@ -58,6 +61,7 @@ public class Main {
                     }
                 }
 
+            // handle video input
             } else if(type.equalsIgnoreCase("video") && name != null) {
                 System.out.println("duration :");
                 String duration = item.nextLine();
@@ -90,7 +94,6 @@ public class Main {
         // based on user select print length times selected track
         if (source > 0) {
             System.out.println("Hai selezionato " + source);
-            // source -= source;
             System.out.println("source " + source);
 
             for (int i = 0; i < list.length; i++) {
@@ -116,22 +119,4 @@ public class Main {
         input.close();
 
     }
-
-   /*
-    static void insertMediaToList(Media[] list, Media item) {
-        if (list != null) {
-            for (int i = 0; i < list.length; i++) {
-                if (list[i] == null) {
-                    list[i] = item;
-                    if (list.length == 5 && list[4] != null) {
-                        break mediaCollector;
-                    }
-                    break;
-                }
-            }
-        } else {
-            list[0] = item;
-        }
-    }
-    */
 }

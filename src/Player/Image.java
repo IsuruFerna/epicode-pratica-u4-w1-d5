@@ -1,8 +1,11 @@
 package Player;
 
+import Player.Enum.MultimediaType;
+import Player.Interfaces.Brightness;
+
 import java.util.StringJoiner;
 
-public class Image extends Media implements Brightness{
+public class Image extends Media implements Brightness {
     public int brightness;
 
     public Image(String title, MultimediaType type, int brightness) {

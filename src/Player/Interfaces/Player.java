@@ -1,4 +1,4 @@
-package Player;
+package Player.Interfaces;
 
 public interface Player {
     int volumeUp ();

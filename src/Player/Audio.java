@@ -1,5 +1,8 @@
 package Player;
 
+import Player.Enum.MultimediaType;
+import Player.Interfaces.Player;
+
 import java.util.StringJoiner;
 
 public class Audio extends Media implements Player {
